@@ -201,6 +201,52 @@ footer {
   font-family: 'DM Mono', monospace; font-size: 10px;
   color: var(--dim); letter-spacing: .06em; text-align: center;
 }
+
+/* ─── METODOLOGIA ─── */
+.metodologia-section { background: #fff; }
+.met-divider { border: none; border-top: 1px solid var(--line); margin: 32px 0; }
+.met-grid { margin-top: 32px; border-top: 1px solid var(--line); }
+.met-step { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.met-step:last-child { border-bottom: none; }
+.met-num {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--blue); letter-spacing: .2em; margin-bottom: 10px;
+}
+.met-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.met-text { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+/* ─── CASES ─── */
+.cases-section { background: var(--surface); }
+.case-card {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.case-card:first-child {
+  border-top: 3px solid var(--blue);
+  margin-top: 32px; padding-top: 32px;
+}
+.case-card:last-child { border-bottom: none; }
+.case-sector {
+  font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 600;
+  color: var(--blue); letter-spacing: .2em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.case-metric { margin-bottom: 20px; }
+.case-metric-val {
+  font-family: 'Bebas Neue', sans-serif; font-size: 44px;
+  line-height: 1; color: var(--ink); display: block;
+}
+.case-metric-label {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--muted); letter-spacing: .1em; text-transform: uppercase;
+  margin-top: 4px; display: block;
+}
+.case-note {
+  font-size: 12px; color: var(--dim); line-height: 1.75;
+  padding-top: 16px; border-top: 1px solid var(--line);
+  margin-top: 4px; font-style: italic;
+}
 </style>
 </head>
 <body>
@@ -230,6 +276,89 @@ footer {
     <h1>COMUNICAÇÃO QUE SE<br>TRANSFORMA EM<br><span class="blue">RESULTADO.</span></h1>
     <p class="hero-sub">A Monte ajuda empresas a organizarem <strong>posicionamento, conteúdo e aquisição</strong> para transformar comunicação em crescimento e resultado.</p>
     <a href="https://wa.me/5544999051116" target="_blank" class="btn"><span>Quero conversar</span><span>→</span></a>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section class="metodologia-section" id="metodo">
+  <div class="container">
+    <div class="sec-label">Metodologia</div>
+    <h2>Como trabalhamos</h2>
+    <hr class="met-divider">
+    <p class="intro-p">Primeiro entendemos a oferta, os diferenciais, a jornada do cliente, o posicionamento e o ICP. Analisamos concorrentes e benchmarks para identificar oportunidades. Com a estratégia definida, estruturamos a aquisição via Meta Ads e Google Ads.</p>
+    <div class="met-grid">
+      <div class="met-step">
+        <div class="met-num">01</div>
+        <div class="met-title">Diagnóstico e estratégia</div>
+        <p class="met-text">Entendemos a oferta, os diferenciais, o posicionamento e o ICP.</p>
+      </div>
+      <div class="met-step">
+        <div class="met-num">02</div>
+        <div class="met-title">Análise de mercado</div>
+        <p class="met-text">Analisamos concorrentes e benchmarks para identificar oportunidades.</p>
+      </div>
+      <div class="met-step">
+        <div class="met-num">03</div>
+        <div class="met-title">Estrutura de aquisição</div>
+        <p class="met-text">Montamos a operação via Meta Ads e Google Ads, alinhando comunicação e oferta.</p>
+      </div>
+      <div class="met-step">
+        <div class="met-num">04</div>
+        <div class="met-title">Testes e otimização</div>
+        <p class="met-text">Testamos públicos, criativos, ofertas e mensagens constantemente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases-section">
+  <div class="container">
+    <div class="sec-label">Resultados</div>
+    <h2>Cases</h2>
+    <div class="case-card">
+      <div class="case-sector">Faculdade</div>
+      <div class="case-metric">
+        <span class="case-metric-val">8%</span>
+        <span class="case-metric-label">Conversão Lead → Matrícula</span>
+      </div>
+      <div class="case-metric">
+        <span class="case-metric-val">1,6×</span>
+        <span class="case-metric-label">ROAS Inicial</span>
+      </div>
+      <div class="case-metric">
+        <span class="case-metric-val">8× a 10×</span>
+        <span class="case-metric-label">LTV Projetado</span>
+      </div>
+      <p class="case-note">LTV considerando alunos desistentes e aqueles que permanecem até 1 ano.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-sector">Imobiliária</div>
+      <div class="case-metric">
+        <span class="case-metric-val">+20%</span>
+        <span class="case-metric-label">Procura por imóveis</span>
+      </div>
+      <div class="case-metric">
+        <span class="case-metric-val">+10%</span>
+        <span class="case-metric-label">Contratos de locação</span>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-sector">Escola de Idiomas</div>
+      <div class="case-metric">
+        <span class="case-metric-val">10–15%</span>
+        <span class="case-metric-label">Conversão Lead → Matrícula</span>
+      </div>
+      <div class="case-metric">
+        <span class="case-metric-val">3× a 6×</span>
+        <span class="case-metric-label">ROAS Inicial</span>
+      </div>
+      <div class="case-metric">
+        <span class="case-metric-val">90× a 150×</span>
+        <span class="case-metric-label">LTV Projetado</span>
+      </div>
+      <p class="case-note">Permanência média de 3 a 5 anos. Quanto mais cedo ingressa, maior o LTV.</p>
+    </div>
   </div>
 </section>
 

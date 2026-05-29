@@ -567,6 +567,97 @@ footer {
   .cf-item p { font-size:15px; color:rgba(255,255,255,.75); line-height:1.8; margin:0; }
   .cf-item strong { color:#fff; font-weight:600; }
   @media(max-width:900px){ .como-funciona { grid-template-columns:1fr; gap:48px; } }
+
+/* ─── METODOLOGIA ─── */
+.metodologia {
+  padding:140px 0;
+  background:var(--ink2);
+  border-top:1px solid var(--line);
+}
+.met-header h2 {
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(38px,4vw,58px);
+  line-height:1.15; color:var(--white); margin-bottom:0;
+}
+.met-divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+.met-desc { font-size:14px; color:var(--muted); line-height:1.85; max-width:760px; }
+.met-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:0;
+  border:1px solid var(--line); margin-top:64px;
+}
+.met-step {
+  padding:56px 48px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  transition:background .3s;
+}
+.met-step:nth-child(2n) { border-right:none; }
+.met-step:nth-child(3),
+.met-step:nth-child(4) { border-bottom:none; }
+.met-step:hover { background:rgba(37,99,235,.04); }
+.met-num {
+  font-family:'DM Mono',monospace; font-size:11px;
+  color:var(--blue-b); letter-spacing:.2em; margin-bottom:20px;
+}
+.met-title { font-size:16px; font-weight:700; color:var(--white); margin-bottom:12px; }
+.met-text { font-size:13px; color:var(--muted); line-height:1.8; }
+
+/* ─── CASES ─── */
+.cases {
+  padding:140px 0;
+  background:var(--ink);
+  border-top:1px solid var(--line);
+}
+.cases-header h2 {
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(38px,4vw,58px);
+  line-height:1.15; color:var(--white);
+}
+.cases-divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+.cases-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--line);
+}
+.case-card {
+  padding:48px 40px;
+  border-right:1px solid var(--line);
+  background:var(--surface);
+  position:relative; overflow:hidden; transition:background .3s;
+}
+.case-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--blue);
+}
+.case-card:last-child { border-right:none; }
+.case-card:hover { background:rgba(37,99,235,.04); }
+.case-sector {
+  font-family:'DM Mono',monospace; font-size:10px; font-weight:600;
+  color:var(--blue-b); letter-spacing:.22em; text-transform:uppercase;
+  margin-bottom:36px;
+}
+.case-metric { margin-bottom:24px; }
+.case-metric-val {
+  font-family:'Bebas Neue',sans-serif; font-size:52px;
+  line-height:1; color:var(--white); display:block;
+}
+.case-metric-label {
+  font-family:'DM Mono',monospace; font-size:10px;
+  color:var(--muted); letter-spacing:.1em; text-transform:uppercase;
+  margin-top:4px; display:block;
+}
+.case-note {
+  font-size:12px; color:var(--dim); line-height:1.75;
+  padding-top:20px; border-top:1px solid var(--line);
+  margin-top:8px; font-style:italic;
+}
+@media(max-width:900px){
+  .met-grid { grid-template-columns:1fr; }
+  .met-step { border-right:none; }
+  .met-step:nth-child(3) { border-bottom:1px solid var(--line); }
+  .cases-grid { grid-template-columns:1fr; }
+  .case-card { border-right:none; border-bottom:1px solid var(--line); }
+  .case-card:last-child { border-bottom:none; }
+}
 </style>
 </head>
 <body>
@@ -638,6 +729,102 @@ footer {
     <div class="hero-coords">MONTE · 23°S 51°W</div>
   </div>
 
+</section>
+
+<!-- ═══════════════════ METODOLOGIA ═══════════════════ -->
+<section class="metodologia" id="metodo">
+  <div class="container">
+
+    <div class="met-header reveal">
+      <div class="sec-label">Metodologia</div>
+      <h2>Como trabalhamos</h2>
+    </div>
+    <hr class="met-divider">
+    <p class="met-desc reveal">Primeiro entendemos a oferta, os diferenciais, a jornada do cliente, o posicionamento e o ICP. Analisamos concorrentes e benchmarks para identificar oportunidades. Com a estratégia definida, estruturamos a aquisição via Meta Ads e Google Ads.</p>
+
+    <div class="met-grid">
+      <div class="met-step reveal">
+        <div class="met-num">01</div>
+        <div class="met-title">Diagnóstico e estratégia</div>
+        <p class="met-text">Entendemos a oferta, os diferenciais, o posicionamento e o ICP.</p>
+      </div>
+      <div class="met-step reveal rd1">
+        <div class="met-num">02</div>
+        <div class="met-title">Análise de mercado</div>
+        <p class="met-text">Analisamos concorrentes e benchmarks para identificar oportunidades.</p>
+      </div>
+      <div class="met-step reveal rd2">
+        <div class="met-num">03</div>
+        <div class="met-title">Estrutura de aquisição</div>
+        <p class="met-text">Montamos a operação via Meta Ads e Google Ads, alinhando comunicação e oferta.</p>
+      </div>
+      <div class="met-step reveal rd3">
+        <div class="met-num">04</div>
+        <div class="met-title">Testes e otimização</div>
+        <p class="met-text">Testamos públicos, criativos, ofertas e mensagens constantemente.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ CASES ═══════════════════ -->
+<section class="cases">
+  <div class="container">
+
+    <div class="cases-header reveal">
+      <div class="sec-label">Resultados</div>
+      <h2>Cases</h2>
+    </div>
+    <hr class="cases-divider">
+
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <div class="case-sector">Faculdade</div>
+        <div class="case-metric">
+          <span class="case-metric-val">8%</span>
+          <span class="case-metric-label">Conversão Lead → Matrícula</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-val">1,6×</span>
+          <span class="case-metric-label">ROAS Inicial</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-val">8× a 10×</span>
+          <span class="case-metric-label">LTV Projetado</span>
+        </div>
+        <p class="case-note">LTV considerando alunos desistentes e aqueles que permanecem até 1 ano.</p>
+      </div>
+      <div class="case-card reveal rd1">
+        <div class="case-sector">Imobiliária</div>
+        <div class="case-metric">
+          <span class="case-metric-val">+20%</span>
+          <span class="case-metric-label">Procura por imóveis</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-val">+10%</span>
+          <span class="case-metric-label">Contratos de locação</span>
+        </div>
+      </div>
+      <div class="case-card reveal rd2">
+        <div class="case-sector">Escola de Idiomas</div>
+        <div class="case-metric">
+          <span class="case-metric-val">10–15%</span>
+          <span class="case-metric-label">Conversão Lead → Matrícula</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-val">3× a 6×</span>
+          <span class="case-metric-label">ROAS Inicial</span>
+        </div>
+        <div class="case-metric">
+          <span class="case-metric-val">90× a 150×</span>
+          <span class="case-metric-label">LTV Projetado</span>
+        </div>
+        <p class="case-note">Permanência média de 3 a 5 anos. Quanto mais cedo ingressa, maior o LTV.</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- ═══════════════════ DOBRA 2 — O QUE É A MONTE ═══════════════════ -->
