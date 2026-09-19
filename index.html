@@ -113,6 +113,10 @@ section { position:relative; }
 .hero-visual svg { width:100%; height:100%; }
 .hero-inner { position:relative; z-index:2; }
 
+.hero-sweep { transform-box:view-box; transform-origin:486px 214px; animation:heroSweep 46s linear infinite; }
+@keyframes heroSweep { to { transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce) { .hero-sweep { animation:none; } }
+
 .hero-eyebrow {
   font-family:'DM Mono',monospace; font-size:11px;
   color:#7ea2f4; letter-spacing:.18em; text-transform:uppercase;
@@ -227,18 +231,27 @@ section { position:relative; }
 .cases-track::-webkit-scrollbar { display:none; }
 
 .case-card {
-  flex:0 0 84%; scroll-snap-align:center;
+  flex:0 0 86%; scroll-snap-align:center; min-height:64svh;
   background:var(--paper-2); border:1px solid var(--line);
   padding:32px 28px 28px; display:flex; flex-direction:column;
 }
-.case-sector { font-family:'DM Mono',monospace; font-size:10.5px; font-weight:600; color:var(--blue-deep); letter-spacing:.18em; text-transform:uppercase; margin-bottom:22px; }
-.case-block { margin-bottom:16px; }
-.case-block-label { font-family:'DM Mono',monospace; font-size:9.5px; color:var(--dim); letter-spacing:.14em; text-transform:uppercase; margin-bottom:6px; }
-.case-block-text { font-size:13.5px; color:var(--muted); line-height:1.7; }
-.case-result { margin-top:auto; padding-top:22px; border-top:1px solid var(--line); }
-.case-result-num { font-family:'Bebas Neue',sans-serif; font-size:56px; line-height:1; color:var(--ink); display:block; }
-.case-result-label { font-family:'DM Mono',monospace; font-size:10.5px; color:var(--blue-deep); letter-spacing:.1em; text-transform:uppercase; margin-top:6px; display:block; }
-.case-result-note { font-size:11.5px; color:var(--dim); line-height:1.6; margin-top:10px; font-style:italic; }
+.case-sector { font-family:'DM Mono',monospace; font-size:10.5px; font-weight:600; color:var(--blue-deep); letter-spacing:.18em; text-transform:uppercase; margin-bottom:6px; }
+.case-subsector { font-size:12.5px; color:var(--muted); margin-bottom:20px; }
+.case-channels { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:auto; }
+.case-channel { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.06em; color:var(--muted); border:1px solid var(--line-2); padding:4px 9px; }
+
+.case-primary { padding-top:24px; }
+.case-tag { font-family:'DM Mono',monospace; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--blue-deep); margin-bottom:10px; display:block; }
+.case-primary-num { font-family:'Bebas Neue',sans-serif; font-size:60px; line-height:1; color:var(--ink); display:block; }
+.case-primary-label { font-size:13px; color:var(--muted); margin-top:8px; max-width:26ch; line-height:1.5; }
+
+.case-secondary { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+.case-tag-sm { font-family:'DM Mono',monospace; font-size:8.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin-bottom:8px; display:block; }
+.case-secondary-row { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.case-secondary-num { font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--blue-navy); white-space:nowrap; }
+.case-secondary-text { font-size:11.5px; color:var(--muted); line-height:1.55; }
+
+.case-tertiary { margin-top:14px; font-size:11px; color:var(--dim); font-style:italic; line-height:1.65; }
 
 .cases-dots { display:flex; gap:7px; justify-content:center; margin-top:18px; }
 .cases-dots span { width:6px; height:6px; border-radius:50%; background:var(--line-2); transition:background .3s, transform .3s; }
@@ -337,9 +350,10 @@ footer {
   .cases .sec-head { padding:0 56px; max-width:1200px; margin-left:auto; margin-right:auto; }
   .cases-track { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:16px; max-width:1200px; margin-left:auto; margin-right:auto; box-sizing:border-box; }
   .cases-track { width:calc(100% - 112px); }
-  .case-card { background:var(--paper); border:none; padding:44px 36px 40px; }
+  .case-card { background:var(--paper); border:none; padding:48px 40px 44px; min-height:0; }
   .case-card:nth-child(2) { background:var(--paper-2); }
-  .case-result-num { font-size:72px; }
+  .case-primary-num { font-size:76px; }
+  .case-secondary-num { font-size:28px; }
   .cases-dots { display:none; }
 
   /* ABOUT */
@@ -376,29 +390,27 @@ footer {
 <section class="hero">
   <div class="hero-visual">
     <svg viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="vg" cx="60%" cy="30%" r="60%">
-          <stop offset="0%" stop-color="rgba(37,99,235,.16)"/>
-          <stop offset="100%" stop-color="rgba(37,99,235,0)"/>
-        </radialGradient>
-      </defs>
-      <rect width="700" height="700" fill="url(#vg)"/>
-      <!-- horizon -->
-      <line x1="0" y1="260" x2="700" y2="260" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
-      <!-- converging perspective lines toward vanishing point -->
-      <g stroke="rgba(126,162,244,.22)" stroke-width="1">
-        <line x1="0" y1="700" x2="470" y2="230"/>
-        <line x1="120" y1="700" x2="470" y2="230"/>
-        <line x1="280" y1="700" x2="470" y2="230"/>
-        <line x1="460" y1="700" x2="470" y2="230"/>
-        <line x1="620" y1="700" x2="470" y2="230"/>
+      <!-- concentric rings — perspective / leitura de cenário, sem ponto de fuga -->
+      <g stroke="rgba(126,162,244,.9)" fill="none">
+        <circle cx="486" cy="214" r="64" stroke-opacity=".22" stroke-width="1"/>
+        <circle cx="486" cy="214" r="134" stroke-opacity=".16" stroke-width="1"/>
+        <circle cx="486" cy="214" r="206" stroke-opacity=".11" stroke-width="1"/>
+        <circle cx="486" cy="214" r="280" stroke-opacity=".07" stroke-width="1"/>
       </g>
-      <!-- trajectory accent -->
-      <line x1="0" y1="640" x2="470" y2="230" stroke="rgba(126,162,244,.65)" stroke-width="1.4"/>
-      <!-- vanishing / clarity point -->
-      <circle cx="470" cy="230" r="4" fill="rgba(126,162,244,.9)"/>
-      <circle cx="470" cy="230" r="16" fill="none" stroke="rgba(126,162,244,.4)" stroke-width="1"/>
-      <circle cx="470" cy="230" r="34" fill="none" stroke="rgba(126,162,244,.18)" stroke-width="1"/>
+      <!-- bearing ticks around the outer ring -->
+      <g stroke="rgba(255,255,255,.2)" stroke-width="1">
+        <line x1="486" y1="-66" x2="486" y2="-52"/>
+        <line x1="486" y1="480" x2="486" y2="494"/>
+        <line x1="192" y1="214" x2="206" y2="214"/>
+        <line x1="766" y1="214" x2="780" y2="214"/>
+      </g>
+      <!-- bearing axis, encerra em ângulo aberto (sem ponto) -->
+      <line x1="70" y1="610" x2="486" y2="214" stroke="rgba(126,162,244,.5)" stroke-width="1.2"/>
+      <path d="M462,206 L486,214 L470,232" fill="none" stroke="rgba(126,162,244,.75)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- slow sweep tick, único elemento em movimento -->
+      <g class="hero-sweep">
+        <line x1="486" y1="-66" x2="486" y2="-40" stroke="rgba(126,162,244,.55)" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
     </svg>
   </div>
 
@@ -556,51 +568,66 @@ footer {
   <div class="cases-track">
     <div class="case-card reveal">
       <div class="case-sector">Educação</div>
-      <div class="case-block">
-        <div class="case-block-label">O cenário</div>
-        <p class="case-block-text">Operação de aquisição para uma instituição de ensino.</p>
+      <div class="case-subsector">Faculdade · Pós-graduação</div>
+      <div class="case-channels">
+        <span class="case-channel">Meta Ads</span>
+        <span class="case-channel">Google Ads</span>
+        <span class="case-channel">YouTube</span>
       </div>
-      <div class="case-block">
-        <div class="case-block-label">O trabalho</div>
-        <p class="case-block-text">Estruturação de campanhas, segmentação das ofertas e acompanhamento dos pontos de conversão.</p>
+      <div class="case-primary">
+        <span class="case-tag">Crescimento</span>
+        <span class="case-primary-num" data-count-target="10" data-prefix="+" data-suffix="%">+0%</span>
+        <p class="case-primary-label">de crescimento adicional em matrículas, sobre o volume que a instituição já possuía.</p>
       </div>
-      <div class="case-result">
-        <span class="case-result-num" data-count-target="8" data-suffix="%">0%</span>
-        <span class="case-result-label">Conversão média</span>
+      <div class="case-secondary">
+        <span class="case-tag-sm">Eficiência</span>
+        <div class="case-secondary-row">
+          <span class="case-secondary-num">≈16x</span>
+          <span class="case-secondary-text">relação LTV/CAC — valor do aluno ao longo da permanência frente ao custo de aquisição.</span>
+        </div>
       </div>
     </div>
 
     <div class="case-card reveal rd1">
       <div class="case-sector">Imobiliário</div>
-      <div class="case-block">
-        <div class="case-block-label">O cenário</div>
-        <p class="case-block-text">Empreendimento buscando aumentar volume e qualidade das oportunidades.</p>
+      <div class="case-subsector">Lançamento residencial</div>
+      <div class="case-channels">
+        <span class="case-channel">Google Ads</span>
+        <span class="case-channel">Meta Ads</span>
       </div>
-      <div class="case-block">
-        <div class="case-block-label">O trabalho</div>
-        <p class="case-block-text">Reorganização da estrutura de mídia, comunicação e direcionamento das campanhas.</p>
+      <div class="case-primary">
+        <span class="case-tag">Crescimento</span>
+        <span class="case-primary-num" data-count-target="20" data-prefix="+" data-suffix="%">+0%</span>
+        <p class="case-primary-label">de aumento no volume de oportunidades, em relação ao cenário anterior.</p>
       </div>
-      <div class="case-result">
-        <span class="case-result-num" data-count-target="20" data-prefix="+" data-suffix="%">+0%</span>
-        <span class="case-result-label">Em oportunidades</span>
+      <div class="case-secondary">
+        <span class="case-tag-sm">Resultado comercial</span>
+        <div class="case-secondary-row">
+          <span class="case-secondary-num">+10%</span>
+          <span class="case-secondary-text">em locações residenciais — mais oportunidades convertendo em contratos.</span>
+        </div>
       </div>
     </div>
 
     <div class="case-card reveal rd2">
       <div class="case-sector">Idiomas</div>
-      <div class="case-block">
-        <div class="case-block-label">O cenário</div>
-        <p class="case-block-text">Escola de idiomas com matrículas recorrentes e permanência de longo prazo.</p>
+      <div class="case-subsector">Escola de idiomas</div>
+      <div class="case-channels">
+        <span class="case-channel">Meta Ads</span>
       </div>
-      <div class="case-block">
-        <div class="case-block-label">O trabalho</div>
-        <p class="case-block-text">Ajuste de segmentação, mensagens e acompanhamento da jornada até a matrícula.</p>
+      <div class="case-primary">
+        <span class="case-tag">Crescimento</span>
+        <span class="case-primary-num" data-count-target="15" data-prefix="+" data-suffix="%">+0%</span>
+        <p class="case-primary-label">de aumento em matrículas, com a entrada da mídia paga.</p>
       </div>
-      <div class="case-result">
-        <span class="case-result-num">10–15%</span>
-        <span class="case-result-label">Conversão em matrícula</span>
-        <p class="case-result-note">Retorno projetado de 90× a 150× o investimento, considerando permanência média de 3 a 5 anos.</p>
+      <div class="case-secondary">
+        <span class="case-tag-sm">Eficiência</span>
+        <div class="case-secondary-row">
+          <span class="case-secondary-num">2,5x</span>
+          <span class="case-secondary-text">ROAS inicial — o retorno já supera o investimento em aquisição.</span>
+        </div>
       </div>
+      <p class="case-tertiary">Potencial de LTV acima de 100× o CAC em alunos de longa permanência (~3 anos) — não é retorno imediato de campanha.</p>
     </div>
   </div>
 
