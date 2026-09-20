@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MONTE. — Estratégia para mídia paga</title>
-<meta name="description" content="Gestão estratégica para empresas que já anunciam ou querem começar com mais clareza sobre oferta, comunicação e mídia paga.">
+<title>MONTE. — Gestão estratégica de mídia paga</title>
+<meta name="description" content="Gestão de mídia paga para empresas que querem transformar investimento em aquisição com mais estratégia, acompanhamento e clareza.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -161,6 +161,10 @@ section { position:relative; }
 /* ═══════════════════ MÉTODO ECOA ═══════════════════ */
 .ecoa { background:var(--paper-2); padding:88px 0 96px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .ecoa .sec-head h2 { max-width:20ch; }
+.ecoa-lead {
+  font-family:'DM Serif Display',serif; font-style:italic;
+  font-size:15.5px; color:var(--blue-navy); margin-top:24px;
+}
 
 .ecoa-close {
   font-family:'DM Serif Display',serif; font-style:italic;
@@ -208,8 +212,8 @@ section { position:relative; }
 .situations { margin-top:56px; border-top:1px solid rgba(255,255,255,.14); }
 .situation { display:flex; gap:20px; padding:26px 0; border-bottom:1px solid rgba(255,255,255,.14); }
 .situation-num { font-family:'DM Mono',monospace; font-size:12px; color:#7ea2f4; letter-spacing:.06em; padding-top:3px; min-width:26px; }
-.situation-text { font-size:15.5px; color:#fff; line-height:1.55; max-width:44ch; }
-.situation-text strong { color:#7ea2f4; font-weight:600; }
+.situation-title { font-size:15.5px; color:#fff; font-weight:700; line-height:1.4; margin-bottom:8px; max-width:36ch; }
+.situation-text { font-size:13.5px; color:rgba(255,255,255,.55); line-height:1.65; max-width:40ch; }
 
 .consultoria-note {
   margin-top:40px; padding:18px 20px; border-left:2px solid var(--blue);
@@ -303,7 +307,7 @@ footer {
   /* ECOA */
   .ecoa { padding:150px 0 160px; }
   .ecoa-flow { display:none; }
-  .ecoa-orbit-wrap { display:block; margin-top:20px; }
+  .ecoa-orbit-wrap { display:block; margin-top:64px; }
   .ecoa-orbit-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:64px; align-items:center; }
   .ecoa-orbit { position:relative; width:100%; max-width:480px; aspect-ratio:1/1; margin:0 auto; }
   .ecoa-orbit svg { width:100%; height:100%; overflow:visible; }
@@ -381,7 +385,7 @@ footer {
 <nav id="nav">
   <div style="display:flex;align-items:center;">
     <div class="nav-logo">MONTE<span>.</span></div>
-    <span class="nav-tag">Estratégia para mídia paga</span>
+    <span class="nav-tag">Gestão estratégica de mídia paga</span>
   </div>
   <a href="https://api.whatsapp.com/send?phone=5544999051116&text=Thalles%2C%20tudo%20bem%3F%20Encontrei%20a%20Monte%20pelo%20site%20e%20gostaria%20de%20entender%20melhor%20a%20gest%C3%A3o%20estrat%C3%A9gica%20de%20m%C3%ADdia%20paga." target="_blank" class="nav-cta">Conversar</a>
 </nav>
@@ -416,15 +420,14 @@ footer {
 
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-eyebrow">MONTE. — Estratégia para mídia paga</div>
+      <div class="hero-eyebrow">MONTE. — Gestão estratégica de mídia paga</div>
       <h1 class="hero-h1">Antes de investir mais em mídia, <span class="blue">entenda o que precisa fazer sentido.</span></h1>
-      <p class="hero-sub">Gestão estratégica para empresas que já anunciam ou querem começar com mais clareza sobre <strong>oferta</strong>, <strong>comunicação</strong> e <strong>mídia paga</strong>.</p>
+      <p class="hero-sub">Gestão de mídia paga para empresas que querem transformar investimento em aquisição com mais estratégia, <strong>acompanhamento</strong> e <strong>clareza</strong>.</p>
       <div class="hero-cta-row">
         <a href="https://api.whatsapp.com/send?phone=5544999051116&text=Thalles%2C%20tudo%20bem%3F%20Encontrei%20a%20Monte%20pelo%20site%20e%20gostaria%20de%20entender%20melhor%20a%20gest%C3%A3o%20estrat%C3%A9gica%20de%20m%C3%ADdia%20paga." target="_blank" class="btn-primary">
-          <span>Quero conversar</span>
+          <span>Quero falar sobre minha operação</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L8 2M13 7L8 12" stroke="currentColor" stroke-width="1.4"/></svg>
         </a>
-        <span class="hero-meta">Online ou presencial · encontros por hora</span>
       </div>
     </div>
     <div class="hero-visual-panel"></div>
@@ -439,6 +442,8 @@ footer {
       <div class="sec-head-side">O anúncio é a última etapa, não a primeira. Cada letra do ECOA resolve uma pergunta diferente — antes do investimento em mídia começar a rodar.</div>
       <h2>Para o anúncio funcionar, <span class="blue">existe uma estrutura antes dele.</span></h2>
     </div>
+
+    <p class="ecoa-lead reveal">É assim que conduzimos uma operação de mídia paga.</p>
 
     <!-- mobile: vertical flow -->
     <div class="ecoa-flow reveal">
@@ -529,28 +534,37 @@ footer {
     <div class="consultoria-grid">
       <div>
         <div class="sec-head reveal" style="margin-bottom:0;">
-          <div class="eyebrow">Gestão</div>
-          <h2>Um olhar de fora para quem precisa decidir melhor por dentro.</h2>
+          <div class="eyebrow">Como atuamos</div>
+          <h2>Mídia paga não deveria ser um fornecedor à parte do seu negócio.</h2>
         </div>
         <div class="consultoria-body reveal rd1" style="margin-top:28px;">
-          <p>A gestão pode partir de uma operação que já existe ou de uma empresa que ainda está estruturando sua mídia paga.</p>
-          <p>O encontro é direcionado à realidade do negócio: podemos analisar desde oferta e comunicação até campanhas, criativos, métricas e pontos de melhoria.</p>
+          <p>A Monte atua como parceira da empresa na gestão da mídia paga, acompanhando a operação, entendendo o negócio e transformando dados em decisões de campanha.</p>
+          <p>O trabalho não termina quando o anúncio entra no ar. Acompanhamos oferta, comunicação, aquisição e resultados para identificar o que precisa ser mantido, testado ou ajustado.</p>
         </div>
-        <div class="consultoria-note reveal rd2">Você não precisa necessariamente de mais mídia. Pode precisar entender melhor o que está colocando nela.</div>
+        <div class="consultoria-note reveal rd2">A mídia funciona melhor quando quem a gerencia entende o negócio por trás dela.</div>
       </div>
 
       <div class="situations reveal rd1">
         <div class="situation">
           <span class="situation-num">01</span>
-          <span class="situation-text">Para quem quer <strong>entender melhor a própria operação.</strong></span>
+          <div class="situation-body">
+            <div class="situation-title">Entender o negócio antes de anunciar</div>
+            <p class="situation-text">Oferta, público, operação e objetivos orientam a estratégia de mídia.</p>
+          </div>
         </div>
         <div class="situation">
           <span class="situation-num">02</span>
-          <span class="situation-text">Para quem precisa <strong>cobrar melhor uma agência ou gestor.</strong></span>
+          <div class="situation-body">
+            <div class="situation-title">Gerenciar e otimizar continuamente</div>
+            <p class="situation-text">Campanhas, públicos, criativos, canais e investimento são acompanhados de forma recorrente.</p>
+          </div>
         </div>
         <div class="situation">
           <span class="situation-num">03</span>
-          <span class="situation-text">Para quem quer <strong>estruturar a mídia antes de começar.</strong></span>
+          <div class="situation-body">
+            <div class="situation-title">Transformar dados em próximas decisões</div>
+            <p class="situation-text">O resultado da mídia orienta novos testes, ajustes de comunicação e oportunidades de crescimento.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -561,7 +575,7 @@ footer {
 <section class="cases" id="cases">
   <div class="sec-head reveal">
     <div class="eyebrow">Resultados</div>
-    <div class="sec-head-side">Três operações, três realidades diferentes. O raciocínio por trás do número importa mais do que o número isolado.</div>
+    <div class="sec-head-side">Resultados construídos em operações contínuas de mídia paga, acompanhando aquisição, eficiência e impacto no negócio.</div>
     <h2>Cases</h2>
   </div>
 
@@ -646,8 +660,8 @@ footer {
         <h2 class="reveal rd1">Thalles Renoste</h2>
         <div class="about-body reveal rd2">
           <p>Sou formado em Administração desde 2014 e, desde então, passei por diferentes experiências no mundo dos negócios — entre elas, um aplicativo de delivery e a confecção da minha família.</p>
-          <p>Hoje sou sócio da <strong>Verve Marketing</strong>, uma agência boutique de marketing, e também atuo com gestão estratégica de mídia paga através da <strong>Monte</strong>.</p>
-          <p>Minha atuação une uma visão de negócio à comunicação e à mídia, ajudando empresas a entender melhor o que estão oferecendo, como estão comunicando e onde estão investindo.</p>
+          <p>Hoje sou sócio da <strong>Verve Marketing</strong>, uma agência boutique de marketing, e conduzo a <strong>Monte</strong>, uma operação especializada em gestão estratégica de mídia paga.</p>
+          <p>Minha atuação une visão de negócio, comunicação e performance para que a mídia não seja tratada apenas como campanha, mas como parte da estratégia de aquisição da empresa.</p>
         </div>
         <div class="about-cta reveal rd3">
           <a href="https://api.whatsapp.com/send?phone=5544999051116&text=Thalles%2C%20tudo%20bem%3F%20Encontrei%20a%20Monte%20pelo%20site%20e%20gostaria%20de%20entender%20melhor%20a%20gest%C3%A3o%20estrat%C3%A9gica%20de%20m%C3%ADdia%20paga." target="_blank" class="btn-primary" style="background:var(--ink);color:#fff;">
@@ -663,7 +677,7 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">MONTE<span>.</span></div>
-  <div class="footer-copy">© 2026 Monte · Estratégia para mídia paga</div>
+  <div class="footer-copy">© 2026 Monte · Gestão estratégica de mídia paga</div>
 </footer>
 
 <script>
